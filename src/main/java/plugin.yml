@@ -1,0 +1,65 @@
+name: Simpl-eTokens
+main: me.noeffort.simpletokens.Main
+version: 0.4.2
+
+description: Tokens Plugin
+author: NoEffort 
+
+commands:
+  token:
+    aliases: [tk]
+    description: Main command for plugin.
+    usage: "Usage: /<command>"
+    permission: tokens.use
+    
+permissions:
+  tokens.*:
+    description: Access all plugin permissions
+    children:
+      tokens.admin: true
+      tokens.reload: true
+  tokens.admin:
+    desctiption: Access to all admin commands
+    children:
+      tokens.default: true
+      tokens.debug: true
+      tokens.give.others.admin: true
+      tokens.reset: true
+      tokens.reset.others: true
+  tokens.default:
+    description: Access all default permissions
+    children:
+      tokens.use: true
+      tokens.bal: true
+      tokens.bal.others: true
+      tokens.give.others: true
+  tokens.use:
+    description: Use the plugin
+    default: true
+  tokens.give:
+    description: Give tokens to yourself
+    default: false
+  tokens.give.others:
+    description: Given tokens to other players
+    default: true
+  tokens.give.others.admin:
+    description: Give tokens to others without taking from yours
+    default: false
+  tokens.reload:
+    description: Reload the plugin
+    default: false
+  tokens.bal:
+    description: Get balance of tokens you own
+    defult: true
+  tokens.bal.others:
+    description: Get balance of tokens of others
+    default: true
+  tokens.reset:
+    description: Reset your tokens
+    defualt: false
+  tokens.reset.others:
+    description: Reset another user's tokens
+    default: false
+  tokens.debug:
+    desciption: Debug info
+    default: false
